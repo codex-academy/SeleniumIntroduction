@@ -15,8 +15,8 @@ jobs:
           uses: actions/setup-java@v1
           with:
             java-version: 1.8
+            
         - name:  Install Google Chrome # Using shell script to install Google Chrome
-        
           run:   |
               chmod +x ./install-chrome.sh 
               ./install-chrome.sh 
