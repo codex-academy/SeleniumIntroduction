@@ -84,7 +84,8 @@ public class UserGreetTest {
 
     @BeforeEach
     public void doThisBeforeEachTest() {
-        System.out.println("yo! About to run another test!");
+
+        // System.out.println("yo! About to run another test!");
     }
 
 
