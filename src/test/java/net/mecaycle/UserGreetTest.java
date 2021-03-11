@@ -5,7 +5,10 @@ import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -20,6 +23,8 @@ public class UserGreetTest {
     By.ByCssSelector languageRadioButtonsSelector = new By.ByCssSelector("input[type='radio']");
 
     WebDriver driver;
+
+
 
     public String getCountAfterGreetingUser (String username) {
 
@@ -68,7 +73,12 @@ public class UserGreetTest {
     public void doThisOnlyOnce() {
         WebDriverManager.chromedriver().setup();
 
-        driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--headless");
+
+        driver = new ChromeDriver(options);
         driver.get("https://mecayleg.github.io/greetings/");
     }
 
